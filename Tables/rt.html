@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="cs">
+    
+<head>
+        <meta charset="UTF-8">
+        <title>Rozsirena tabulka</title>
+        <style>
+            table {
+                border: 3px solid black;
+                border-collapse: collapse;
+            }   
+
+            th, td {
+                border: 2px solid black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Rozsirena tabulka - skupina sloupcu</h1>
+        <table>
+            <thead style="background-color: tomato">
+                <tr>
+                    <th rowspan="2">Firma</th>
+                    <th colspan="2">2017</th>
+                    <th colspan="2">2018</th>
+                </tr>
+                <tr>
+                    <th>Pocet</th>
+                    <th>%</th>
+                    <th>Pocet</th>
+                    <th>%</th>
+                </tr>
+            </thead>
+            <tbody style="background-color: turquoise">
+                <tr>
+                    <td>Samsung</td>
+                    <td>500 000</td>
+                    <td>30 %</td>
+                    <td>650 000</td>
+                    <td>32 %</td>
+                </tr>
+                <tr>
+                    <td>huawei</td>
+                    <td>250 000</td>
+                    <td>17 %</td>
+                    <td>640 000</td>
+                    <td>31 %</td>
+                </tr>
+            </tbody>
+            <tfoot style="background-color: crimson; font-weight: bold">
+                <tr>
+                    <td>Celkem</td>
+                    <td>5 406 845</td>
+                    <td>100 %</td>
+                    <td>9 554 548</td>
+                    <td>100 %</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+    <head>
+            <title>HTML Elementy</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Martin Synek">
+        <meta name="description" content="První webová straánka o HTML, kterou děláme">
+        <meta name="keywords" content="html, tagy, elementy, atributy">
+        <!-- Propojení s CSS -->
+        <link rel="stylesheet" href="style.css">
+        <link rel="shortcut icon" href="./ikony/brackets.ico" type="image/x-icon">
+    </head>
+
+    <body>
+        <!-- Nadpisy -->
+        <h1>Hlavní nadpis</h1>
+        <h2 style="text-align: center;">Kapitola 1</h2>
+        <h2>Kapitola 2</h2>
+        <h2>Kapitola 3</h2>
+        <h3>Podkapitola</h3>
+        <h4>Další nadpis</h4>
+        <h5>Nadpis nevím na co</h5>
+        <h6>Poslední nadpis</h6>
+        <!-- Odstavce textu -->
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 100&nbsp;000&nbsp;Kč<br>
+            Dolores, excepturi, ratione&#160;facilis labore cupiditate quidem temporibus rerum laudantium harum facere
+            illum, alias corporis optio pariatur assumenda quis nulla perspiciatis sequi quasi nihil debitis accusamus!
+            Error sed officiis dolorum, similique cum quidem, reiciendis consectetur maxime voluptatibus quo, accusamus
+            adipisci doloribus aspernatur!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi odio, sapiente perferendis, delectus aliquam
+            minima quis sed amet vitae, iure facilis modi! Nemo quasi quia exercitationem repellat qui, rerum officia!</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem et incidunt dolorum illum hic deserunt quasi.
+            Aut fugit autem ullam, molestiae quaerat doloribus placeat iste voluptate et ducimus dolores dolorem.</p>
+        <p>Znaky: &copy; &lt; &gt; &tint;</p>
+        <hr style="border-color: plum;">
+        <h2>Formátování textu pomocí HTML</h2>
+        <p><i title="kurzíva">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</i> Qui facilis, hic cum commodi
+            officiis, iusto rem tenetur accusamus optio ad accusantium unde voluptas aliquid, earum pariatur. Officia
+            perferendis recusandae adipisci?</p>
+        <p>Laboriosam reiciendis <em title="zvýraznění">dicta</em> tenetur <strong title="zdůraznění">dolorem</strong>.
+            Quod, accusantium! Aliquid eaque ratione modi ipsam velit blanditiis impedit accusamus dolore eligendi
+            perferendis tempore veniam, quam odio praesentium totam culpa! Asperiores sapiente excepturi consequatur.</p>
+        <p><b title="tučně">Modi eveniet asperiores labore eaque quaerat numquam deleniti eos obcaecati magni?</b>
+            Dignissimos, sed. Necessitatibus quam, expedita nulla inventore dolores atque veritatis officiis at cum, iure
+            voluptate minus officia animi et.</p>
+        <!-- další formátování -->
+        <p>Lorem ipsum, <small>sit</small> <big>amet</big> <span style="font-size: 150%">consectetur</span> adipisicing elit. Unde nemo sunt omnis consectetur tempore rerum libero dolorum voluptas et provident dolore repudiandae quis in quia commodi, modi laborum cum? Quod!</p>
+        <p>Sint nisi ut <mark>cumque</mark> vel <mark style="background-color: aqua;">repudiandae</mark>, dignissimos, voluptates quod ad velit at officiis deserunt delectus corrupti soluta fuga error dolores laudantium, aliquam numquam. Architecto consectetur amet ipsam quidem. Labore.</p>
+        <p>At ea aspernatur <del>maxime</del> soluta <ins cite="" datetime="2019-10-02T11:14:20">sint</ins> aliquam velit, earum, architecto esse qui cupiditate illo vel dolorem. Ullam ipsa pariatur, consequatur quidem minus quae quos corrupti. Porro aut autem et. Modi.</p>
+        <p>At voluptatum <sup>ducimus</sup> <sub>dolorem</sub> est? Quia hic quis aliquid omnis, repellat officiis quos similique quibusdam magnam id deserunt, voluptas quae voluptatem obcaecati, amet ipsam! Aliquam harum repellendus dolor eveniet.</p>
+        <p>Minus repellat reiciendis quod. Enim esse fuga molestiae amet repellat dolores ipsam ducimus, nam exercitationem, illum at quod doloremque possimus aspernatur qui? Quidem voluptatem rerum ullam incidunt fugit eum dignissimos.</p>
+        <!-- kód atp. -->
+        <p>Definice: <dfn>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, est!</dfn></p>
+        <p>Kód: <code>int cislo = 50 + x</code> Vstup z klávesnice <kbd>klávesnice</kbd> <samp>Ukázka</samp></p>
+        <p>Koupil jsem si nové <abbr title="Acronym nebo zkráceniny">CPU</abbr> od <abbr title="AMD">AMD</abbr>.</p>
+        <address title="Adresy nebo autor článku, je blokový">
+            Autor: Martin Synek <br>
+            Telefon: +420 733 266 648 <br>
+            E-mail: <a href="mailto:synekm@spstrutnov.cz?Subject='Předmět'">synekm@spstrutnov.cz</a>
+        </address>
+        <pre>
+                public bool Delete(PolozkaDO aPolozka)
+                {
+                    SqlConnection conn = new SqlConnection(Pripojeni.ConnString);
+                    try
+                    {
+                        SqlCommand cmdNon = new SqlCommand(DELETE, conn);
+                        cmdNon.Prepare();
+                        cmdNon.Parameters.AddWithValue("@id_polozka", aPolozka.Id);
+                        conn.Open();
+                        if (cmdNon.ExecuteNonQuery() > 0)
+                            return true;
+                        else return false;
+                    }
+                    catch (SqlException ex)
+                    {
+                        throw new DataAccessException("Nastala chyba při práci s daty", ex);
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new DataAccessException("Nastala neznámá chyba", ex);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }
+        </pre>
+        <h2>Obrázky</h2>
+        <div>
+            Ikony
+            <!-- Alt + shif + šipka dolů = kopírování řádku -->
+            <img src="./obrazky/flaticon/computer16.png" alt="Počítač 16px">
+            <img src="./obrazky/flaticon/computer24.png" alt="Počítač 24px">
+            <img src="./obrazky/flaticon/computer32.png" alt="Počítač 32px">
+            <img src="./obrazky/flaticon/computer64.png" alt="Počítač 64px">
+            <img src="./obrazky/flaticon/computer128.png" alt="Počítač 128px">
+            <img src="./obrazky/flaticon/computer256.png" alt="Počítač 256px">
+            <img src="./obrazky/flaticon/computer512.png" alt="Počítač 512px">
+        </div>
+        <p>Lorem ipsum, dolor viz. Obr. 1 - Chicago River sit amet consectetur adipisicing elit. Autem doloribus praesentium accusamus repellat exercitationem quo nihil ex ipsa atque fugit, asperiores maiores sequi rem ad molestias nisi suscipit esse placeat.</p>
+        <figure>
+            <img src="./obrazky/chicago.jpg" alt="Chicago River">
+            <figcaption>Obr. 1 - <a href="./clanek.html#Chicago">Chicago</a> River</figcaption>
+        </figure>
+        <p>Omnis, enim aut? Quidem, consequatur. Deserunt, nisi reiciendis nobis vitae, eaque voluptas itaque sit mollitia repudiandae neque autem tempora distinctio perspiciatis voluptatibus officiis. Recusandae, dignissimos voluptatum? Tempora beatae aperiam laboriosam?</p>
+        <p>Nesciunt, odit sed laboriosam nulla eos, nobis voluptatibus iusto dolorum maxime, quo expedita minima modi iste velit aspernatur sequi omnis nemo enim quam amet eligendi. Itaque soluta nihil excepturi dignissimos?</p>
+    </body>
+
+</html>

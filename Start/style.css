@@ -1,0 +1,12 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+del {
+    background-color: red;
+}
+
+ins {
+    background-color: lightgreen;
+    text-decoration: none;
+}
